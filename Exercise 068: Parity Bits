@@ -1,0 +1,41 @@
+while True:
+    bit_1_counter = 0
+    invalid_1_and_0 = 0
+    invalid_length = 0
+
+    # User will enter byte
+    print('\nNew byte')
+    byte = input('Please type the byte:')
+
+    # Stops the program is byte is empty
+    if byte == '':
+        print('Program stopped')
+        break
+
+    else:
+        for i in byte:
+            # Checks for invalid bits in the byte
+            if i not in ('1', '0'):
+                invalid_1_and_0 = 1
+            # Checks for invalid length of byte
+            elif len(byte) != 8:
+                invalid_length = 1
+            else:
+                # Counter for number of 1 bits
+                if i == '1':
+                    bit_1_counter += 1
+        
+        # Prints errors associated with invalid byte
+        if invalid_1_and_0 == 1:
+            print('Invalid byte! The byte must only contain 1s and 0s!')
+        if invalid_length == 1:
+            print('Invalid byte! The byte must be 8 bits in length!')
+
+        # Prints parity bit if byte format is ok
+        if invalid_1_and_0 == 0 and invalid_length == 0:
+            if bit_1_counter % 2 == 0:
+                print('Parity bit should be 0')
+            else:
+                print('Parity bit should be 1')
+        else:
+            pass
