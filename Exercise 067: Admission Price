@@ -1,0 +1,38 @@
+# List used to store all inputs
+cost = []
+
+while True:
+    print(cost)
+    # User will enter age
+    print('\nNew age')
+    age = input('Please type the age:')
+
+    # Prints the average cost and ends the loop
+    if age == '':
+        # Prints the average cost
+        print('\nTotal cost: ${:.2f}'.format(sum(cost)))
+
+        # Ends the loop
+        print('Program stopped.')
+        break
+    else:
+        try:
+            age = int(age)
+            
+            # Prevent negative age
+            if age < 0:
+                print('Age cannot be negative!')
+
+            # Appends cost to cost list based on age
+            else:
+                if age <= 2:
+                    cost.append(0)
+                elif 3 <= age <= 12:
+                    cost.append(14.0)
+                elif age >= 65:
+                    cost.append(18.00)
+                else:
+                    cost.append(23.00)
+
+        except ValueError:
+            print('Please only enter a number!')
