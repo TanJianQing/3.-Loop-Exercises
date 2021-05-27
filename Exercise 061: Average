@@ -1,0 +1,20 @@
+# List used to store all inputs
+list1 = []
+
+while True:
+    try:
+        # User will enter a collection of values
+        value = float(input('Please type a number:'))
+        
+        # Ends the loop if 0 is entered
+        if value==0:
+            print('Program stopped.')
+            break
+        else:
+            # Calculates the average of all inputs and prints them
+            list1.append(value)
+            average = sum(list1) / len(list1)
+            print(f'Average: {average}')
+
+    except ValueError:
+        print('Error! Input is not a number!')
