@@ -1,0 +1,7 @@
+# Repeats the calculation for the 4 different prices
+for i in (4.95, 9.95, 14.95, 19.95, 24.95):
+    print(f'Original price: ${i}')
+    # Calculates discount price
+    discount = 0.6 * i
+    print('Discount:${:.2f}'.format(discount))
+    print('New price:${:.2f}'.format(i-discount), '\n')
