@@ -3,9 +3,9 @@ list1 = []
 
 while True:
     # User will enter a collection of values
-    price = input('Please type a number:')
+    price = input('Please type a price:')
 
-    # Ends the loop if nothing is entered
+    # Ends the loop if 0 is entered
     if price == '':
         print('Program stopped.')
         break
@@ -15,7 +15,7 @@ while True:
             price = float(price)
             list1.append(price)
             total = sum(list1)
-            print('Total: ${:.2f}'.format(total))
+            print('\nTotal: ${:.2f}'.format(total))
 
             # Prints out the amount in to pay in cash
             price_in_cents = total * 100
