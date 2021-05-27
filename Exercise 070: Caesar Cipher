@@ -1,0 +1,71 @@
+# Lists for storing alphabet indexes and input message indexes
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+message_list = []
+
+# Show available modes
+print('-' * 10)
+print('Modes:')
+print('-' * 10)
+print('1. Encryption mode')
+print('2. Decryption mode')
+
+# Mode selection loop
+loop = 1
+while loop == 1:
+    mode = input('Please select the mode:')
+    if mode not in ('1', '2'):
+        print('Please only type 1 or 2!')
+    else:
+        loop = 0
+
+# Message input loop
+loop = 1
+while loop == 1:
+    upper_case = 0
+    message = input('Please type in the message you want:')
+    for i in message:
+        if i.isupper() is True:
+            upper_case = 1
+        else:
+            pass
+    if upper_case == 1:
+        print('Please do not use upper cases!')
+    else:
+        loop = 0
+
+# Shift selection loop
+loop = 1
+while loop == 1:
+    try:
+        shift = int(input('Please indicate the shift amount:'))
+        loop = 0
+    except ValueError:
+        print('Please only type a number!')
+
+# Store message in message_list
+for i in message:
+    if i in alphabet:
+        message_list.append(alphabet.index(i) + 1)
+    else:
+        message_list.append(i)
+
+# Prints message if encryption is chosen
+if mode == '1':
+    print('Your encrypted message:')
+    for i in message_list:
+        if type(i) == int:
+            new_position = ((i + shift) % 26)
+            print(alphabet[new_position], end='')
+        else:
+            print(i, end='')
+
+# Prints message if decryption is chosen
+else:
+    print('Your decrypted message:')
+    for i in message_list:
+        if type(i) == int:
+            new_position = ((i - shift - 2) % 26)
+            print(alphabet[new_position], end='')
+        else:
+            print(i, end='')
