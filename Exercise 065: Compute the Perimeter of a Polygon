@@ -1,0 +1,49 @@
+# Import necessary modules
+from math import sqrt
+
+# List used to store all inputs
+x_list = []
+y_list = []
+length_list = []
+
+while True:
+    # User will enter x and y-coordinates
+    print('New point')
+    x_coordinate = input('Please type the x-coordinate:')
+
+    # Prints the perimeter and ends the loop if blank is entered
+    if x_coordinate == '':
+        # Calculates the distance between the last point and the first point and appends it to a list
+        length = sqrt((x_list[-1] - x_list[0]) ** 2 + (y_list[-1] - y_list[0]) ** 2)
+        length_list.append(length)
+        
+        # Prints the perimeter of the polygon
+        print(f'Perimeter: {sum(length_list)}')
+        
+        # Ends the loop
+        print('Program stopped.')
+        break
+    
+    else:
+        y_coordinate = input('Please type the y-coordinate:')
+        try:
+            # Converting x and y-coordinate into floats for calculation
+            x_coordinate = float(x_coordinate)
+            y_coordinate = float(y_coordinate)
+            
+            # Appending x and y-coordinates to their respective lists
+            x_list.append(x_coordinate)
+            y_list.append(y_coordinate)
+            
+            # Calculates the distance between last 2 points and appends it to a list
+            length = sqrt((x_list[-1] - x_list[-2]) ** 2 + (y_list[-1] - y_list[-2]) ** 2)
+            length_list.append(length)
+
+        except IndexError:
+            pass
+
+        except ValueError:
+            x_list.clear()
+            y_list.clear()
+            print('Error! Input is not a number!')
+            print('Please retype all coordinates!')
