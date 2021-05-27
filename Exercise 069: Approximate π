@@ -1,0 +1,15 @@
+# Approximating pi 15 times
+for approx in range(2, 17):
+    pi = 3
+
+    # Calculate the value of pi for each approximation
+    for i in range(2,approx):
+        part = (4 / (2 * i * (2 * i - 1) * (2 * i - 2)))
+        if i % 2 == 0:
+            pi += part
+        else:
+            pi -= part
+
+    # Prints out the approximated value of pi for each approximation
+    print(f'Approximation number: {approx-1}')
+    print(pi)
