@@ -1,0 +1,30 @@
+# List used to store all inputs
+list1 = []
+
+while True:
+    # User will enter a collection of values
+    price = input('Please type a number:')
+
+    # Ends the loop if nothing is entered
+    if price == '':
+        print('Program stopped.')
+        break
+    else:
+        try:
+            # Calculates the average of all inputs and prints them
+            price = float(price)
+            list1.append(price)
+            total = sum(list1)
+            print('Total: ${:.2f}'.format(total))
+
+            # Prints out the amount in to pay in cash
+            price_in_cents = total * 100
+            if price_in_cents % 5 == 0:
+                print('Cash: ${:.2f}'.format(total))
+            elif price_in_cents % 5 < 2.5:
+                print('Cash: ${:.2f}'.format((price_in_cents//5) * 0.05))
+            else:
+                print('Cash: ${:.2f}'.format((price_in_cents//5+1) * 0.05))
+
+        except ValueError:
+            print('Error! Input is not a number!')
