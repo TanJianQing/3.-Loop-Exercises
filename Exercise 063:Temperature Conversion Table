@@ -1,0 +1,6 @@
+# Header for columns
+print('Celsius(°C)   Fahrenheit(°F)')
+
+# Repeats the calculation for the 10 different temperatures
+for i in (0,10,20,30,40,50,60,70,80,90,100):
+    print(i, ' '*12, (i * 9 / 5) + 32)
