@@ -1,0 +1,46 @@
+# List used to store all inputs
+points = []
+
+while True:
+    # User will enter grade
+    print('New grade:')
+    grade = input('Please type the letter grade:')
+
+    if grade == '':
+        # Calculates the average grade
+        average = sum(points) / len(points)
+        print(f'Average score: {average}')
+
+        # Ends the loop
+        print('Program stopped.')
+        break
+
+    elif grade not in ('A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'F'):
+        print('Error! Please check if the letter grade is typed correctly!')
+
+    else:
+        # Appends points to points list based on grade
+        if grade == 'A+':
+            points.append(4.0)
+        elif grade == 'A':
+            points.append(4.0)
+        elif grade == 'A-':
+            points.append(3.7)
+        elif grade == 'B+':
+            points.append(3.3)
+        elif grade == 'B':
+            points.append(3.0)
+        elif grade == 'B-':
+            points.append(2.7)
+        elif grade == 'C+':
+            points.append(2.3)
+        elif grade == 'C':
+            points.append(2.0)
+        elif grade == 'C-':
+            points.append(1.7)
+        elif grade == 'D+':
+            points.append(1.3)
+        elif grade == 'D':
+            points.append(1.0)
+        else:
+            points.append(0.0)
