@@ -1,0 +1,26 @@
+# Import necessary modules
+from random import choice
+
+# List for storing selections
+selection = [[], [], [], [], [], [], [], [], [], []]
+
+# Loop to select head or tails 10 times
+for i in range(0, 10):
+    # Nested loop to flip for head or tails
+    loop=1
+    while loop == 1:
+        # Selection of heads or tails
+        heads_or_tails = choice(('H', 'T'))
+        print(heads_or_tails, end=' ')
+
+        # Appending results to selection list
+        selection[i].append(heads_or_tails)
+
+        try:
+            # Print number of flips required to get 3 consecutive results, and starts a new series of attempts after
+            if selection[i][-1] == selection[i][-2] == selection[i][-3]:
+                print(f'[{len(selection[i])} flips]')
+                loop = 0
+
+        except IndexError:
+            pass
