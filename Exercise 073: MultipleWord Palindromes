@@ -1,0 +1,21 @@
+# Lists for storing alphabets and alphabetical text parts
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+text_list = []
+
+# loop to check input text
+loop = 1
+while loop == 1:
+    text = input('Please type a string:')
+    loop = 0
+
+for i in text:
+    if i.lower() in alphabet:
+        text_list.append(i)
+    else:
+        pass
+
+if text_list[::-1] == text_list:
+    print('This string is a palindrome.')
+else:
+    print('This string is not a palindrome.')
