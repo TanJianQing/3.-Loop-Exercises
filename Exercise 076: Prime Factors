@@ -1,0 +1,22 @@
+# loop to check user's number for prime factorising
+loop = 1
+while loop == 1:
+    try:
+        number = int(input('Please type the integer to prime factorise:'))
+        if number <= 2:
+            print('Number must be greater than 2 to prime factorise!')
+        else:
+            loop = 0
+    except ValueError:
+        print('Please only type a integer!')
+
+# Setting factor as 2 first
+factor = 2
+
+# Increasing factor by 1 every time it does not divide, and prints out each factor
+while factor <= number:
+    if number % factor == 0:
+        print(f'Factor: {factor}')
+        number = number // factor
+    else:
+        factor += 1
