@@ -1,0 +1,24 @@
+# loop to check input binary number
+loop = 1
+while loop == 1:
+    try:
+        binary = input('Please type the binary number to convert:')
+        for i in binary:
+            if i not in ('1','0'):
+                print('Binary numbers can only consist of 1s and 0s!')
+        else:
+            loop = 0
+    except ValueError:
+        print('Please only type binary number!')
+
+# Set decimal as 0 initially and power of 2^n for each position will be based on the length of the binary
+decimal = 0
+power = len(binary) - 1
+
+# Calculating the decimal form of the binary
+for i in binary:
+    decimal += int(i) * 2 ** power
+    power -= 1
+
+# Prints converted decimal number
+print(f'Decimal form: {decimal}')
