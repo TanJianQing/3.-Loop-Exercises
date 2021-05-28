@@ -1,0 +1,21 @@
+# loop to check user's number
+loop = 1
+while loop == 1:
+    try:
+        number_1 = float(input('Please type the 1st number:'))
+        number_2 = float(input('Please type the 2nd number:'))
+        loop = 0
+    except ValueError:
+        print('Please only type a number!')
+
+if number_1 < number_2:
+    divisor = number_2
+else:
+    divisor = number_1
+
+while True:
+    if number_2 % divisor == 0 and number_1 % divisor == 0:
+        print(f'{divisor} is the largest divisor for {number_1} and {number_2}.')
+        break
+    else:
+        divisor -= 1
