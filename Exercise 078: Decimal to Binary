@@ -1,0 +1,32 @@
+# loop to check input binary number
+loop = 1
+while loop == 1:
+    try:
+        decimal = int(input('Please type the integer to convert:'))
+        if decimal == 1:
+            print('Binary form:')
+            print('0')
+            exit()
+        elif decimal <= 0:
+            print('The integer must be positive!')
+        else:
+            loop = 0
+    except ValueError:
+        print('Please only type an integer!')
+
+# Store binary in a list
+binary = []
+
+# Calculating the decimal form of the binary
+while True:
+    insert = decimal % 2
+    decimal = decimal // 2
+    binary.insert(0, insert)
+    if decimal == 1:
+        binary.insert(0, decimal)
+        break
+
+# Prints converted binary number
+print('Binary form:')
+for i in binary:
+    print(i, end='')
