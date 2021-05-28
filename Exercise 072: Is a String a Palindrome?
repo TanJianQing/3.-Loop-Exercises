@@ -1,0 +1,10 @@
+# loop to check input text
+loop = 1
+while loop == 1:
+    text = input('Please type a string:')
+    loop = 0
+
+if text[::-1] == text:
+    print('This string is a palindrome.')
+else:
+    print('This string is not a palindrome.')
