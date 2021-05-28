@@ -8,19 +8,23 @@ selection = []
 update = 0
 
 # Loop to select 1 number out of 1-100 100 times
-for i in range(0,10):
+for i in range(0,101):
     selected = choice(range(1, 101))
-    
+
     # Checking if new number is bigger than the current largest number
     try:
         if selected > sorted(selection)[-1]:
+            print(f'{selected} [Updated maximum number]')
             update += 1
+        else:
+            print(selected)
+
     except IndexError:
         pass
-    
+
     # Appends the selected number to the list
     selection.append(selected)
 
 # Printing results
-print(f'The highest integer is {sorted(selection)[-1]}'.)
+print(f'The highest integer is {sorted(selection)[-1]}')
 print(f'The highest integer was updated {update} times.')
