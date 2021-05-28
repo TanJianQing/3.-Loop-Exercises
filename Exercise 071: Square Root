@@ -1,0 +1,18 @@
+# loop to check user's number
+loop = 1
+while loop == 1:
+    try:
+        number = float(input('Please type the number to approximate square root for:'))
+        loop = 0
+    except ValueError:
+        print('Please only type a number!')
+
+guess = number / 2
+actual = number ** 0.5
+
+# Improves the approximation until difference between actual and guess is less than 10^-12
+while abs(guess - actual) > 10 ** -12:
+    guess = (guess + number/guess) / 2
+
+# Prints approximation
+print(f'The approximate square root of {number} is {guess}.')
