@@ -1,0 +1,15 @@
+# Lists for storing numbers
+number_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Prints the header
+print(' ', end=' ')
+for i in number_list:
+    print(i, end=' ')
+print('')
+
+# nested loop to print multiplication table
+for i in number_list:
+    print(i, end=' ')
+    for j in number_list:
+        print(i * j, end=' ')
+    print('')
