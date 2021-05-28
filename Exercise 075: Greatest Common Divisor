@@ -8,11 +8,13 @@ while loop == 1:
     except ValueError:
         print('Please only type a number!')
 
+# Setting divisor as the bigger number first
 if number_1 < number_2:
     divisor = number_2
 else:
     divisor = number_1
 
+# Divisor will decrease by 1 until it is the actual divisor
 while True:
     if number_2 % divisor == 0 and number_1 % divisor == 0:
         print(f'{divisor} is the largest divisor for {number_1} and {number_2}.')
